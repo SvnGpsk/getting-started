@@ -39,5 +39,7 @@ RUN mkdocs build
 FROM nginx:alpine
 COPY --from=app-zip-creator /app.zip /usr/share/nginx/html/assets/app.zip
 COPY --from=build /app/site /usr/share/nginx/html
-RUN chgrp -R 0 /etc/todo && \
-    chmod -R g=u /etc/todo 
+RUN chgrp -R 0 /etc/todos && \
+    chmod -R g=u /etc/todos 
+USER 1001
+RUN chown -R 1001:0 /etc/todos
