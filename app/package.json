@@ -31,6 +31,6 @@
     "prettier": "^1.18.2"
   },
 "scripts": {
-    "start": "node index.js"
+    "start": "node app/index.js"
   }
 }
